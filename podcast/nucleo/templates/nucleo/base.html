@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title> {% block title %}{% endblock %}</title>
+    {% load static %}
+    <!-- Estilos y fuentes del template  -->
+    <link href="{% static 'nucleo/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'nucleo/vendor/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href="{% static 'nucleo/css/clean-blog.min.css' %}" rel="stylesheet">
+
+  </head>
+
+  <body>
+    <table style="width:100%">
+        <tr style="text-align:center;background-color:black;color:white;">
+            <td>
+              <a class="nav-link" href="{%url 'Home'%}">Portada</a>
+            </td>
+            <td>
+              <a class="nav-link" href="{%url 'Primero A'%}">Primero A</a>
+            </td>
+            <td>
+              <a class="nav-link" href="{%url 'Primero B'%}">Primero B</a>
+            </td>
+            <td>
+              <a class="nav-link" href="{%url 'Tercero A'%}">Tercero A</a>
+            </td>
+            <td>
+              <a class="nav-link" href="{%url 'Tercero B'%}">Tercero B</a>
+            </td>
+        </tr>
+    </table>
+    <!-- Contenido-->
+    <div style="background-image: url('{% block background %}{% endblock %}')">
+    {% block content %}{% endblock %}
+    </div>
+
+    <!-- Bootstrap y Javascripts -->
+    <script src="{% static 'nucleo/vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'nucleo/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'nucleo/js/clean-blog.min.js' %}"></script>
+
+  </body>
+
+</html>
